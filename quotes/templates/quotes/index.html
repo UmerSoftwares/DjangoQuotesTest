@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotes</title>
+    {% load staticfiles %}
+		<link rel="stylesheet" href="{% static '/css/style.css' %}">
+	  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+
+</head>
+<body>
+ <div id="content" class="p-4 p-md-5 pt-5">
+<h2 class="mb-4" style="text-align: center">Test Quotes</h2>
+{% for quote in quotes %}
+    	  <div style="align-items: center; margin: 30px;">
+			  <div class="card rounded" style="max-width: 800px; margin: auto">
+                    <div class="card-header">
+                         <b>{{ quote.author }}</b>
+                    </div>
+                  <div class="card-body">
+                      {{ quote.text }}
+                  </div>
+              </div>
+          </div>
+{% endfor %}
+ </div>
+</body>
+</html>
